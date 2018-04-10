@@ -112,6 +112,15 @@ class PaymentRequest
         $this->parameters['transactionReference'] = $transactionReference;
     }
 
+    public function setBypassReceiptPage($bypassReceiptPage)
+    {
+        if ($bypassReceiptPage) {
+            $this->parameters['paypageData.bypassReceiptPage'] = 'true';
+        } else {
+            $this->parameters['paypageData.bypassReceiptPage'] = 'false';
+        }
+    }
+
     /**
      * Set amount in cents, eg EUR 12.34 is written as 1234
      */
